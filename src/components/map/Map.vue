@@ -92,4 +92,13 @@ export default {
     font-size: 12px;
     color: #777;
   }
+
+  @media (max-width: 767px) {
+    .info-wrapper {
+      top: 50px;
+      right: 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+    }
+  }
 </style>

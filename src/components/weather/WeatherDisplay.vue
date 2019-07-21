@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper" v-if="item">
+  <div class="wrapper">
     <p class="loading-wrapper" v-if="isLoading">
       <b-spinner style="width: 4rem; height: 4rem; margin:2rem;" label="Large Spinner"></b-spinner><br>
       <small>we receive data, wait a moment!</small>
@@ -14,7 +14,7 @@
         aria-hidden="true" /> {{ error }}
     </div>
 
-    <div class="weather">
+    <div class="weather" v-if="item">
       <div class="city">{{item.city}}</div>
       <div class="desc">{{item.description}}</div>
       <img :src="item.icon" :alt="item.description">
@@ -32,6 +32,10 @@
         </div>
       </div>
     </div>
+
+    <div v-if="!item && geolocalization">
+      <small><i>Share your location to see the current weather</i></small>
+    </div>
   </div>
 </template>
 
@@ -42,7 +46,7 @@ import Clouds from './modules/Clouds'
 import Wind from './modules/Wind'
 
 export default {
-  props: ['point', 'save'],
+  props: ['point', 'save', 'geolocalization'],
   watch: { 
     point: function(newVal, oldVal) {
       if (newVal) {

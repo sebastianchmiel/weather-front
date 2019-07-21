@@ -28,4 +28,11 @@ export default {
     font-weight: 900;
     font-size: 28px;
   }
+
+  @media (max-width: 576px) {
+    .box-transparent {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
 </style>

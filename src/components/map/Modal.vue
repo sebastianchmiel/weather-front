@@ -1,6 +1,6 @@
 <template>
   <b-modal id="weatherInfo" title="Weather info" :hide-footer="true">
-    <weather-display :point="point" :save="true"></weather-display>
+    <weather-display :point="point" :save="true" :geolocalization="false"></weather-display>
   </b-modal>
 </template>
 

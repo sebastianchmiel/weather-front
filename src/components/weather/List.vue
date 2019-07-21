@@ -1,5 +1,5 @@
 <template>
-  <div class="block-white">
+  <div class="block-white mb-4">
     <div v-if="isLoading">
       <b-spinner style="width: 4rem; height: 4rem; margin:2rem;" label="Large Spinner"></b-spinner>
     </div>

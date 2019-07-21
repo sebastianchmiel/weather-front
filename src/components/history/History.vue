@@ -1,22 +1,22 @@
 <template>
   <div class="container-fluid page-content">
-    <div class="row" v-if="stats">
-      <div class="col-3">
+    <div class="row boxes-wrapper" v-if="stats">
+      <div class="col-md-3 col-sm-6 box-transparent-wrapper">
         <box-transparent title="MIN TEMPERATURE">
           <temperature :value="stats.temperature.min" icon="thermometer-empty"/>
         </box-transparent>
       </div>
-      <div class="col-3">
+      <div class="col-md-3 col-sm-6 box-transparent-wrapper">
         <box-transparent title="AVG TEMPERATURE">
           <temperature :value="stats.temperature.avg" icon="thermometer-half"/>
         </box-transparent>
       </div>
-      <div class="col-3">
+      <div class="col-md-3 col-sm-6 box-transparent-wrapper">
         <box-transparent title="MAX TEMPERATURE">
           <temperature :value="stats.temperature.max" icon="thermometer-full"/>
         </box-transparent>
       </div>
-      <div class="col-3">
+      <div class="col-md-3 col-sm-6 box-transparent-wrapper">
         <box-transparent title="THE MOST POPULAR CITY">
           <font-awesome-icon icon="map-marker-alt" />
           {{stats.mostSearchedCity}}
@@ -25,11 +25,11 @@
     </div>
 
     <div class="row">
-      <div class="col-9">
+      <div class="col-md-9 col-sm-12">
         <weather-list :point="point"></weather-list>
       </div>
-      <div class="col-3">
-        <weather-display :point="point" :save="false"></weather-display>
+      <div class="col-md-3 col-sm-12">
+        <weather-display :point="point" :save="false" :geolocalization="true"></weather-display>
 
         <box-white title="TOTAL SEARCHES COUNT" v-if="stats">
           <font-awesome-icon icon="search-location" />
@@ -118,5 +118,15 @@ export default {
     font-size: 1rem;
     color: #aaa;
   }
+
+  @media (max-width: 576px) {
+    .box-transparent-wrapper {
+      text-align: center;
+    } 
+    .boxes-wrapper {
+      padding-top: 40px;
+    }
+  }
+  
 
 </style>
