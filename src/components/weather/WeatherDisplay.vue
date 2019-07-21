@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="wrapper" v-if="item">
     <p class="loading-wrapper" v-if="isLoading">
       <b-spinner style="width: 4rem; height: 4rem; margin:2rem;" label="Large Spinner"></b-spinner><br>
       <small>we receive data, wait a moment!</small>
@@ -14,7 +14,7 @@
         aria-hidden="true" /> {{ error }}
     </div>
 
-    <div v-if="item" class="weather">
+    <div class="weather">
       <div class="city">{{item.city}}</div>
       <div class="desc">{{item.description}}</div>
       <img :src="item.icon" :alt="item.description">
@@ -82,6 +82,7 @@ export default {
   .wrapper {
     background-color: #fff;
     padding: 20px;
+    margin-bottom:30px;
   }
   .loading-wrapper {
     text-align: center;

@@ -18,6 +18,7 @@
     "babel-preset-stage-2": "^6.24.1",
     "bootstrap": "^4.3.1",
     "bootstrap-vue": "^2.0.0-rc.26",
+    "dotenv": "^8.0.0",
     "vue": "^2.6.10",
     "vue-router": "^3.0.7",
     "vue2-google-maps": "^0.10.7",

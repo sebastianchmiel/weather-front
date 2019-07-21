@@ -16,7 +16,6 @@ export default {
 
 <style>
   .box-white {
-    margin-top: 40px;
     margin-bottom: 30px;
     padding: 20px;
     background-color: #fff;
